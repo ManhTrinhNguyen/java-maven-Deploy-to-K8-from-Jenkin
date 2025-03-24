@@ -55,7 +55,7 @@ pipeline {
         stage('commit version update'){
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]){
+                    withCredentials([usernamePassword(credentialsId: 'github_credential', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                         sh "git remote set-url origin https://${USER}:${PASS}@github.com:ManhTrinhNguyen/java-maven-Deploy-to-K8-from-Jenkin.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
