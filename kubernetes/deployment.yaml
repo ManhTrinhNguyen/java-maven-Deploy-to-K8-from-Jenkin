@@ -1,0 +1,25 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata:
+  name: $APP_NAME
+  labels:
+    app: $APP_NAME
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: $APP_NAME
+  template:
+    metadata:
+      labels:
+        app: $APP_NAME
+    spec:
+      imagePullSecrets :
+      - name: docker-authentication
+      containers:
+      - name: $APP_NAME
+        image: nguyenmanhtrinh/demo-app:$IMAGE_NAME
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+      
