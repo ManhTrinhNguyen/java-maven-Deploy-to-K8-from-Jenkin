@@ -18,7 +18,7 @@ spec:
       - name: docker-authentication
       containers:
       - name: $APP_NAME
-        image: nguyenmanhtrinh/demo-app:$IMAGE_NAME
+        image: $DOCKER_REPO:$IMAGE_NAME
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
