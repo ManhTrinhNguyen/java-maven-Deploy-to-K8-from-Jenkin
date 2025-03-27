@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "Cloning the repo...."
+                echo "Cloning the repo."
                 checkout scm
             }
         }
