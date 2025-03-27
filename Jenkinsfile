@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "Cloning the repo"
+                echo "Cloning the repo...."
                 checkout scm
             }
         }
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo "Building ${env.PROJECT_NAME}"
                 // Simulate a build step
-                sh 'echo Build complete!'
+                sh 'echo Build complete!!!!!'
             }
         }
 
